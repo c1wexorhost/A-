@@ -206,8 +206,19 @@
                 <div class="row">
                   <div class="col-md-12">
                     <h3 class="text-theme-colored">Career Opportunities:</h3>
-                    <p>CMA professionals are integral to economic activities, contributing as value creators, enablers, preservers, and reporters. They find lucrative positions in multinational companies, demonstrating expertise in analytics, forecasting, and risk management.</p>
-                    <p>CMA India salary packages for freshers average around 8.8 lakhs per annum, with potential earnings increasing based on experience, training, and skills. The CMA designation is considered future-proof, providing a competitive edge in the dynamic corporate world.</p>
+                    <p>CMA professionals are integral to economic activities, contributing as value creators, enablers,
+                      preservers, and reporters. They find lucrative positions in multinational companies, demonstrating
+                      expertise in analytics, forecasting, and risk management.</p>
+                    <p>CMA India salary packages for freshers average around 8.8 lakhs per annum, with potential
+                      earnings increasing based on experience, training, and skills. The CMA designation is considered
+                      future-proof, providing a competitive edge in the dynamic corporate world.</p>
+                      <P>Cost accountants are in great demand in sectors like:
+                        Government sector
+                        Private sector
+                        Banking & finance sector
+                        Developmental agencies
+                        Education
+                        Training & research sector as well as in-service and public utility sectors etc....</P>
                     <!-- <div class="row">
                       <div class="col-xs-4 col-sm-4 col-md-4">
                         <div class="icon-box box-border text-center mb-20 p-15">
@@ -232,74 +243,84 @@
                 </div>
                 <div class="row">
                   <div class="col-md-12">
-                    <h3 class="text-theme-colored title-border mb-30 mt-50">Get A Free Registration!</h3>
+                    <div class="p-40 pl-0">
+                      <!-- Reservation Form Start-->
+                      <form id="reservation_form" name="reservation_form" class="reservation-form" method="post"
+                        action="#">
+                        <h3 class="mt-0 line-bottom mb-40">Get A Free<span class="text-theme-color-2"> Service
+                            Now!</span>
+                        </h3>
+                        <div class="row">
+                          <div class="col-sm-12">
+                            <div class="form-group mb-30">
+                              <input placeholder="Enter Name" type="text" id="reservation_name" name="reservation_name"
+                                required="" class="form-control">
+                            </div>
+                          </div>
+                          <div class="col-sm-12">
+                            <div class="form-group mb-30">
+                              <input placeholder="Email" type="text" id="reservation_email" name="reservation_email"
+                                class="form-control" required="">
+                            </div>
+                          </div>
+                          <div class="col-sm-12">
+                            <div class="form-group mb-30">
+                              <input placeholder="Phone" type="text" id="reservation_phone" name="reservation_phone"
+                                class="form-control" required="">
+                            </div>
+                          </div>
+                          <div class="col-sm-12">
+                            <div class="form-group mb-30">
+                              <div class="styled-select">
+                                <select id="booking_service" name="booking_service" class="form-control" required="">
+                                  <option value="">- Select Your Courses -</option>
+                                  <option value="Accounting Technoloiges">CMA USA</option>
+                                  <option value="Chemical Engineering">CMA INDIA</option>
+                                  <option value="Computer Technologies">Enrollment Agent</option>
+                                  <option value="Development Studies">GST VAT</option>
+                                  <option value="Electrical & Electronic">ACCA IFRS</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-sm-12">
+                            <div class="form-group mb-0 mt-0">
+                              <input name="form_botcheck" class="form-control" type="hidden" value="">
+                              <button type="submit"
+                                class="btn btn-colored btn-theme-colored btn-lg btn-flat border-left-theme-color-2-4px"
+                                data-loading-text="Please wait...">Submit Now</button>
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                      <!-- Reservation Form End-->
 
-                    <!-- Appointment Form Sart-->
-                    <form id="appointment_form" name="appointment_form" class="form-transparent mt-30" method="post"
-                      action="#">
-                      <div class="row">
-                        <div class="col-sm-12">
-                          <div class="form-group mb-10">
-                            <input id="form_name" name="form_name" class="form-control" type="text" required=""
-                              placeholder="Enter Name" aria-required="true">
-                          </div>
-                        </div>
-                        <div class="col-sm-12">
-                          <div class="form-group mb-10">
-                            <input id="form_email" name="form_email" class="form-control required email" type="email"
-                              placeholder="Enter Email" aria-required="true">
-                          </div>
-                        </div>
-                        <div class="col-sm-12">
-                          <div class="form-group mb-10">
-                            <input id="form_phone" name="form_phone" class="form-control required" type="text"
-                              placeholder="Enter Phone" aria-required="true">
-                          </div>
-                        </div>
-                        <div class="col-sm-12">
-                          <div class="form-group mb-10">
-                            <input name="form_appontment_date" class="form-control required datetime-picker" type="text"
-                              placeholder="Appoinment Date & Time" aria-required="true">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="form-group mb-10">
-                        <textarea id="form_message" name="form_message" class="form-control required"
-                          placeholder="Enter Message" rows="5" aria-required="true"></textarea>
-                      </div>
-                      <div class="form-group mb-0 mt-20">
-                        <input id="form_botcheck" name="form_botcheck" class="form-control" type="hidden" value="">
-                        <button type="submit" class="btn btn-dark btn-theme-colored"
-                          data-loading-text="Please wait...">Submit</button>
-                      </div>
-                    </form>
-
-                    <!-- Appointment Form Validation-->
-                    <script type="text/javascript">
-                      $("#appointment_form").validate({
-                        submitHandler: function (form) {
-                          var form_btn = $(form).find('button[type="submit"]');
-                          var form_result_div = '#form-result';
-                          $(form_result_div).remove();
-                          form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
-                          var form_btn_old_msg = form_btn.html();
-                          form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
-                          $(form).ajaxSubmit({
-                            dataType: 'json',
-                            success: function (data) {
-                              if (data.status == 'true') {
-                                $(form).find('.form-control').val('');
+                      <!-- Reservation Form Validation Start-->
+                      <script type="text/javascript">
+                        $("#reservation_form").validate({
+                          submitHandler: function (form) {
+                            var form_btn = $(form).find('button[type="submit"]');
+                            var form_result_div = '#form-result';
+                            $(form_result_div).remove();
+                            form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+                            var form_btn_old_msg = form_btn.html();
+                            form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
+                            $(form).ajaxSubmit({
+                              dataType: 'json',
+                              success: function (data) {
+                                if (data.status == 'true') {
+                                  $(form).find('.form-control').val('');
+                                }
+                                form_btn.prop('disabled', false).html(form_btn_old_msg);
+                                $(form_result_div).html(data.message).fadeIn('slow');
+                                setTimeout(function () { $(form_result_div).fadeOut('slow') }, 6000);
                               }
-                              form_btn.prop('disabled', false).html(form_btn_old_msg);
-                              $(form_result_div).html(data.message).fadeIn('slow');
-                              setTimeout(function () { $(form_result_div).fadeOut('slow') }, 6000);
-                            }
-                          });
-                        }
-                      });
-                    </script>
-                    <!-- Appointment Form Ends -->
-
+                            });
+                          }
+                        });
+                      </script>
+                      <!-- Reservation Form Validation Start -->
+                    </div>
                   </div>
                 </div>
               </div>
@@ -342,7 +363,9 @@
                     <div class="testimonial-carousel-info owl-nav-top">
                       <div class="item">
                         <div class="comment">
-                          <p>Prospire's CMA India course revolutionized my career. The comprehensive curriculum, expert faculty, and rigorous training prepared me for complex financial roles. Today, I confidently navigate strategic decisions as a Cost Manager. Grateful for this transformative journey</p>
+                          <p>Prospire's CMA India course revolutionized my career. The comprehensive curriculum, expert
+                            faculty, and rigorous training prepared me for complex financial roles. Today, I confidently
+                            navigate strategic decisions as a Cost Manager. Grateful for this transformative journey</p>
                         </div>
                         <div class="content mt-20">
                           <div class="thumb pull-right">
@@ -356,7 +379,10 @@
                       </div>
                       <div class="item">
                         <div class="comment">
-                          <p>Choosing Prospire for CMA India coaching was a game-changer. The international recognition of the certification opened doors to global opportunities. The personalized guidance, industry-specific curriculum, and state-of-the-art facilities exceeded my expectations. Proud to be a certified Cost and Management Accountant! </p>
+                          <p>Choosing Prospire for CMA India coaching was a game-changer. The international recognition
+                            of the certification opened doors to global opportunities. The personalized guidance,
+                            industry-specific curriculum, and state-of-the-art facilities exceeded my expectations.
+                            Proud to be a certified Cost and Management Accountant! </p>
                         </div>
                         <div class="content mt-20">
                           <div class="thumb pull-right">
@@ -370,7 +396,10 @@
                       </div>
                       <div class="item">
                         <div class="comment">
-                          <p>Enrolling in Prospire's CMA India program was an enriching experience. The blend of theoretical knowledge and practical training provided a holistic understanding of finance and accounting. The faculty's dedication and the emphasis on ethical values added immense value to my professional journey. Highly recommend it! </p>
+                          <p>Enrolling in Prospire's CMA India program was an enriching experience. The blend of
+                            theoretical knowledge and practical training provided a holistic understanding of finance
+                            and accounting. The faculty's dedication and the emphasis on ethical values added immense
+                            value to my professional journey. Highly recommend it! </p>
                         </div>
                         <div class="content mt-20">
                           <div class="thumb pull-right">
@@ -399,7 +428,9 @@
                       <div id="accordion11" class="panel-collapse collapse in" role="tablist" aria-expanded="true">
                         <div class="panel-content">
                           <p>
-                            CMA India stands for the Institute of Cost Accountants of India (ICAI), which offers the CMA program. It is an accounting designation that focuses on cost and management accounting. </p>
+                            CMA India stands for the Institute of Cost Accountants of India (ICAI), which offers the CMA
+                            program. It is an accounting designation that focuses on cost and management accounting.
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -412,7 +443,9 @@
                       <div id="accordion12" class="panel-collapse collapse" role="tablist" aria-expanded="true">
                         <div class="panel-content">
                           <p>
-                            CMAs in India have diverse career opportunities, including roles in industry, academia, practice, and even in starting their own businesses or startups. They are in demand in government sectors, private enterprises, and the banking and financial sectors. </p>
+                            CMAs in India have diverse career opportunities, including roles in industry, academia,
+                            practice, and even in starting their own businesses or startups. They are in demand in
+                            government sectors, private enterprises, and the banking and financial sectors. </p>
                         </div>
                       </div>
                     </div>
@@ -425,7 +458,8 @@
                       <div id="accordion13" class="panel-collapse collapse" role="tablist" aria-expanded="true">
                         <div class="panel-content">
                           <p>
-                            The time required to become a CMA in India depends on the program you choose. It can take 3-6 months through an integrated program or 1.5 years through an ordinary program. </p>
+                            The time required to become a CMA in India depends on the program you choose. It can take
+                            3-6 months through an integrated program or 1.5 years through an ordinary program. </p>
                         </div>
                       </div>
                     </div>
@@ -438,7 +472,9 @@
                       <div id="accordion14" class="panel-collapse collapse" role="tablist" aria-expanded="true">
                         <div class="panel-content">
                           <p>
-                            The CMA syllabus in India consists of three stages: Foundation, Intermediate, and Final. It includes subjects related to business law, financial accounting, taxation, cost accounting, and management accounting, among others.
+                            The CMA syllabus in India consists of three stages: Foundation, Intermediate, and Final. It
+                            includes subjects related to business law, financial accounting, taxation, cost accounting,
+                            and management accounting, among others.
                           </p>
                         </div>
                       </div>
@@ -452,7 +488,9 @@
                       <div id="accordion15" class="panel-collapse collapse" role="tablist" aria-expanded="true">
                         <div class="panel-content">
                           <p>
-                            Yes, in the Final stage, students are required to select one elective subject from options such as Strategic Performance Management and Business Valuation, Risk Management in Banking and Insurance, and Entrepreneurship and Startup. </p>
+                            Yes, in the Final stage, students are required to select one elective subject from options
+                            such as Strategic Performance Management and Business Valuation, Risk Management in Banking
+                            and Insurance, and Entrepreneurship and Startup. </p>
                         </div>
                       </div>
                     </div>
@@ -460,12 +498,15 @@
                       <div class="panel-title">
                         <a data-parent="#accordion1" data-toggle="collapse" href="#accordion16" class=""
                           aria-expanded="true">
-                          <span class="open-sub"></span>What are the advantages of studying CMA at Prospire in South India?</a>
+                          <span class="open-sub"></span>What are the advantages of studying CMA at Prospire in South
+                          India?</a>
                       </div>
                       <div id="accordion16" class="panel-collapse collapse" role="tablist" aria-expanded="true">
                         <div class="panel-content">
                           <p>
-                            Prospire offers CMA programs with highly experienced faculty, exclusive study materials, technology-aided teaching, and state-of-the-art infrastructure. They also assign mentors to students. </p>
+                            Prospire offers CMA programs with highly experienced faculty, exclusive study materials,
+                            technology-aided teaching, and state-of-the-art infrastructure. They also assign mentors to
+                            students. </p>
                         </div>
                       </div>
                     </div>
@@ -473,12 +514,15 @@
                       <div class="panel-title">
                         <a data-parent="#accordion1" data-toggle="collapse" href="#accordion17" class=""
                           aria-expanded="true">
-                          <span class="open-sub"></span>Is there a difference between the CMA program in India and other countries? </a>
+                          <span class="open-sub"></span>Is there a difference between the CMA program in India and other
+                          countries? </a>
                       </div>
                       <div id="accordion17" class="panel-collapse collapse" role="tablist" aria-expanded="true">
                         <div class="panel-content">
                           <p>
-                            Yes, the CMA designation in India is distinct from the CMA designation in other countries like the USA. The focus and curriculum can vary, so it's important to understand the differences. </p>
+                            Yes, the CMA designation in India is distinct from the CMA designation in other countries
+                            like the USA. The focus and curriculum can vary, so it's important to understand the
+                            differences. </p>
                         </div>
                       </div>
                     </div>
@@ -491,7 +535,9 @@
                       <div id="accordion18" class="panel-collapse collapse" role="tablist" aria-expanded="true">
                         <div class="panel-content">
                           <p>
-                            CMAs in India are in high demand in government sectors, especially for roles such as ICAS, IAS, IRS, IFS, and more. Their expertise in cost and management accounting is valuable in various government departments. </p>
+                            CMAs in India are in high demand in government sectors, especially for roles such as ICAS,
+                            IAS, IRS, IFS, and more. Their expertise in cost and management accounting is valuable in
+                            various government departments. </p>
                         </div>
                       </div>
                     </div>
@@ -499,12 +545,14 @@
                       <div class="panel-title">
                         <a data-parent="#accordion1" data-toggle="collapse" href="#accordion19" class=""
                           aria-expanded="true">
-                          <span class="open-sub"></span>Can I pursue a CMA in India after completing my higher secondary education? </a>
+                          <span class="open-sub"></span>Can I pursue a CMA in India after completing my higher secondary
+                          education? </a>
                       </div>
                       <div id="accordion19" class="panel-collapse collapse" role="tablist" aria-expanded="true">
                         <div class="panel-content">
                           <p>
-                            Yes, you can start your CMA journey at the higher secondary level and progress through the Foundation, Intermediate, and Final stages to obtain your CMA designation. </p>
+                            Yes, you can start your CMA journey at the higher secondary level and progress through the
+                            Foundation, Intermediate, and Final stages to obtain your CMA designation. </p>
                         </div>
                       </div>
                     </div>
@@ -531,84 +579,70 @@
     <!-- end main-content -->
 
     <!-- Footer -->
-    <footer id="footer" class="footer bg-black-222" data-bg-img="images/footer-bg.png">
-      <div class="container pt-70 pb-40">
-        <div class="row">
+    <footer id="footer" class="footer bg-black-222">
+      <div class="container pt-70 pb-30">
+        <div class="row border-bottom-black">
           <div class="col-sm-6 col-md-3">
             <div class="widget dark">
-              <img class="mt-10 mb-15" alt="" src="images/logo-wide-white.png">
-              <p class="font-16 mb-10">GreenPeace is a library of Crowdfunding and Charity templates with predefined
-                elements which helps you to build your own site. Lorem ipsum dolor sit amet consectetur.</p>
-              <a class="font-14" href="#"><i class="fa fa-angle-double-right text-theme-colored"></i> Read more</a>
-              <ul class="styled-icons icon-dark mt-20">
-                <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".1s" data-wow-offset="10"><a
-                    href="#" data-bg-color="#3B5998"><i class="fa fa-facebook"></i></a></li>
-                <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".2s" data-wow-offset="10"><a
-                    href="#" data-bg-color="#02B0E8"><i class="fa fa-twitter"></i></a></li>
-                <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".3s" data-wow-offset="10"><a
-                    href="#" data-bg-color="#05A7E3"><i class="fa fa-skype"></i></a></li>
-                <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".4s" data-wow-offset="10"><a
-                    href="#" data-bg-color="#A11312"><i class="fa fa-google-plus"></i></a></li>
-                <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".5s" data-wow-offset="10"><a
-                    href="#" data-bg-color="#C22E2A"><i class="fa fa-youtube"></i></a></li>
+              <h5 class="widget-title mb-10">Contact Us</h5>
+              <!-- <img class="mt-10 mb-20" alt="" src="images/mainimages/Logo_transparent.png"> -->
+              <ul class="list-inline mt-5">
+                <li class="m-0 pl-10 pr-10"> <i class="fa fa-map-marker  text-theme-colored mr-5"></i> <a
+                    class="text-gray" href="#">Prestige Atlanta,80 Feet Rd, Koramangala 1A Block, Karnataka</a> </li>
+                <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-theme-colored mr-5"></i> <a class="text-gray"
+                    href="#">+91 9056666275</a> </li>
+
+                <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-theme-colored mr-5"></i> <a
+                    class="text-gray" href="#"> educationprospire@gmail.com</a> </li>
+                <li class="m-0 pl-10 pr-10"> <i class="fa fa-globe text-theme-colored mr-5"></i> <a class="text-gray"
+                    href="https://prospireeducation.in/">https://prospireeducation.in/</a> </li>
               </ul>
             </div>
-          </div>
-          <div class="col-sm-6 col-md-3">
             <div class="widget dark">
-              <h5 class="widget-title line-bottom">Latest News</h5>
-              <div class="latest-posts">
-                <article class="post media-post clearfix pb-0 mb-10">
-                  <a href="#" class="post-thumb"><img alt="" src="http://placehold.it/80x55"></a>
-                  <div class="post-right">
-                    <h5 class="post-title mt-0 mb-5"><a href="#">Sustainable Construction</a></h5>
-                    <p class="post-date mb-0 font-12">Mar 08, 2015</p>
-                  </div>
-                </article>
-                <article class="post media-post clearfix pb-0 mb-10">
-                  <a href="#" class="post-thumb"><img alt="" src="http://placehold.it/80x55"></a>
-                  <div class="post-right">
-                    <h5 class="post-title mt-0 mb-5"><a href="#">Industrial Coatings</a></h5>
-                    <p class="post-date mb-0 font-12">Mar 08, 2015</p>
-                  </div>
-                </article>
-                <article class="post media-post clearfix pb-0 mb-10">
-                  <a href="#" class="post-thumb"><img alt="" src="http://placehold.it/80x55"></a>
-                  <div class="post-right">
-                    <h5 class="post-title mt-0 mb-5"><a href="#">Storefront Installations</a></h5>
-                    <p class="post-date mb-0 font-12">Mar 08, 2015</p>
-                  </div>
-                </article>
-                <article class="post media-post clearfix pb-0 mb-10">
-                  <a href="#" class="post-thumb"><img alt="" src="http://placehold.it/80x55"></a>
-                  <div class="post-right">
-                    <h5 class="post-title mt-0 mb-5"><a href="#">Industrial Coatings</a></h5>
-                    <p class="post-date mb-0 font-12">Mar 08, 2015</p>
-                  </div>
-                </article>
-              </div>
+              <h6 class="widget-title mb-0 text-gray-darkgray">Connect With Us</h6>
+              <ul class="styled-icons icon-dark icon-circled icon-sm mt-10">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+              </ul>
             </div>
+
           </div>
+
           <div class="col-sm-6 col-md-3">
             <div class="widget dark">
               <h5 class="widget-title line-bottom">Useful Links</h5>
-              <ul class="list angle-double-right list-border">
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Donor Privacy Policy</a></li>
-                <li><a href="#">Disclaimer</a></li>
-                <li><a href="#">Terms of Use</a></li>
-                <li><a href="#">Media Center</a></li>
+              <ul class="list-border">
+                <li><a href="/">Home</a></li>
+                <li><a href="about.html">About us</a></li>
+                <li><a href="career.html">career</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-3">
+            <div class="widget dark mb-20">
+              <h5 class="widget-title line-bottom">Our Course</h5>
+              <ul class="list-border font-13">
+                <li><a href="cmausa.html">CMA USA</a></li>
+                <li><a href="cmaindia.html">CMA INDIA</a></li>
+                <li><a href="enrolledagent.html">EA (Enrolled Agent)</a></li>
+                <li><a href="gstvat.html">GST VAT</a></li>
+                <li><a href="acca.html">ACCA IFRS</a></li>
               </ul>
             </div>
           </div>
           <div class="col-sm-6 col-md-3">
             <div class="widget dark">
-              <h5 class="widget-title line-bottom">Quick Contact</h5>
-              <ul class="list-border">
-                <li><a href="#">+(012) 345 6789</a></li>
-                <li><a href="#">hello@yourdomain.com</a></li>
-                <li><a href="#" class="lineheight-20">121 King Street, Melbourne Victoria 3000, Australia</a></li>
-              </ul>
+              <h5 class="widget-title mb-10">Call Us Now</h5>
+              <div class="text-gray">
+                +91 9056666275 <br>
+                +91 9056666275
+              </div>
               <p class="font-16 text-white mb-5 mt-15">Subscribe to our newsletter</p>
               <form id="footer-mailchimp-subscription-form" class="newsletter-form mt-10">
                 <label class="display-block" for="mce-EMAIL"></label>
@@ -621,35 +655,20 @@
                   </span>
                 </div>
               </form>
-
-
             </div>
           </div>
         </div>
       </div>
       <div class="footer-bottom bg-black-333">
-        <div class="container pt-20 pb-20">
+        <div class="container pt-10 pb-0">
           <div class="row">
-            <div class="col-md-6">
-              <p class="font-11 text-black-777 m-0"><a target="_blank" href="https://www.templateshub.net">Templates
-                  Hub</a></p>
-            </div>
-            <div class="col-md-6 text-right">
-              <div class="widget no-border m-0">
-                <ul class="list-inline sm-text-center mt-5 font-12">
-                  <li>
-                    <a href="#">FAQ</a>
-                  </li>
-                  <li>|</li>
-                  <li>
-                    <a href="#">Help Desk</a>
-                  </li>
-                  <li>|</li>
-                  <li>
-                    <a href="#">Support</a>
-                  </li>
-                </ul>
-              </div>
+            <div class="col-md-6 sm-text-center">
+              <p class="mb-4">
+                &copy;
+                <a class="font-13 text-black-777 m-0" href="https://prospireeducation.in/">Prospire</a>. All Rights
+                Reserved. Designed by
+                <a class="text-white border-bottom" href="https://wexorai.com/">WexorAI</a>
+              </p>
             </div>
           </div>
         </div>
