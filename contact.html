@@ -86,7 +86,7 @@
         <div class="header-nav-wrapper navbar-scrolltofixed bg-white">
           <div class="container">
             <nav id="menuzord-right" class="menuzord default">
-              <a class="menuzord-brand pull-left flip" href="javascript:void(0)">
+              <a class="menuzord-brand pull-left flip" href="/">
                 <img src="images/mainimages/Logo_transparent.png" alt="logoimage" />
               </a>
               <ul class="menuzord-menu">
@@ -120,9 +120,7 @@
                 <li>
                   <a href="about.html">About</a>
                 </li>
-                <li>
-                  <a href="gallery.html">Gallery</a>
-                </li>
+                
                 <li>
                   <a href="contact.html" class="btn btn-gray btn-transparent btn-theme-colored">Contact <i
                       class="fa fa-arrow-circle-right"></i></a>
@@ -207,13 +205,13 @@
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label>Name <small>*</small></label>
-                      <input name="form_name" class="form-control" type="text" placeholder="Enter Name" required="">
+                      <input id="name" name="form_name" class="form-control" type="text" placeholder="Enter Name" required="">
                     </div>
                   </div>
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label>Email <small>*</small></label>
-                      <input name="form_email" class="form-control required email" type="email"
+                      <input id="email" name="form_email" class="form-control required email" type="email"
                         placeholder="Enter Email">
                     </div>
                   </div>
@@ -239,44 +237,47 @@
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label>Phone</label>
-                      <input name="form_phone" class="form-control" type="text" placeholder="Enter Phone">
+                      <input id="phone" name="form_phone" class="form-control" type="text" placeholder="Enter Phone">
                     </div>
                   </div>
                 </div>
                 <div class="form-group">
                   <label>Message</label>
-                  <textarea name="form_message" class="form-control required" rows="5"
+                  <textarea id="message" name="form_message" class="form-control required" rows="5"
                     placeholder="Enter Message"></textarea>
                 </div>
                 <div class="form-group">
-                  <input name="form_botcheck" class="form-control" type="hidden" value="" />
+                  <input  name="form_botcheck" class="form-control" type="hidden" value="" />
                   <button type="submit" class="btn btn-dark btn-theme-colored btn-flat"
                     data-loading-text="Please wait...">Send your message</button>
                 </div>
               </form>
-              <script type="text/javascript">
-                $("#contact_form").validate({
-                  submitHandler: function (form) {
-                    var form_btn = $(form).find('button[type="submit"]');
-                    var form_result_div = '#form-result';
-                    $(form_result_div).remove();
-                    form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
-                    var form_btn_old_msg = form_btn.html();
-                    form_btn.html(form_btn.prop('disabled', true).data("loading-text"));
-                    $(form).ajaxSubmit({
-                      dataType: 'json',
-                      success: function (data) {
-                        if (data.status == 'true') {
-                          $(form).find('.form-control').val('');
+              <script>
+                $(document).ready(function () {
+                    $("#contact_form").validate({
+                        submitHandler: function (form) {
+                            var form_btn = $(form).find('button[type="submit"]');
+                            var form_result_div = '#form-result';
+                            $(form_result_div).remove();
+                            form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+            
+                            // Perform your additional actions or validations here before AJAX submission
+            
+                            $(form).ajaxSubmit({
+                                dataType: 'json',
+                                success: function (data) {
+                                    if (data.status == 'true') {
+                                        $(form).find('.form-control').val('');
+                                    }
+                                    form_btn.prop('disabled', false).html(form_btn_old_msg);
+                                    $(form_result_div).html(data.message).fadeIn('slow');
+                                    setTimeout(function () { $(form_result_div).fadeOut('slow') }, 6000);
+                                }
+                            });
                         }
-                        form_btn.prop('disabled', false).html(form_btn_old_msg);
-                        $(form_result_div).html(data.message).fadeIn('slow');
-                        setTimeout(function () { $(form_result_div).fadeOut('slow') }, 6000);
-                      }
                     });
-                  }
                 });
-              </script>
+            </script>
 
             </div>
             <div class="col-md-5">
@@ -342,7 +343,7 @@
                 <li><a href="/">Home</a></li>
                 <li><a href="about.html">About us</a></li>
                 <li><a href="course.html">Courses</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
+                
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </div>
@@ -366,7 +367,7 @@
         <div class="container pt-10 pb-0">
           <div class="row">
             <div class="col-md-6 sm-text-center">
-              <p class="mb-4">
+              <p hidden class="mb-4">
                 &copy;
                 <a class="font-13 text-black-777 m-0" href="https://prospireeducation.in/">Prospire</a>. All Rights
                 Reserved. Designed by
@@ -384,6 +385,57 @@
   <!-- Footer Scripts -->
   <!-- JS | Custom script for all pages -->
   <script src="js/custom.js"></script>
+ <script>
+    document
+      .getElementById("contact_form")
+      .addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent form submission
+
+        // Get form values
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var booking_service = document.getElementById("booking_service").value;
+        var phone = document.getElementById("phone").value;
+        var message = document.getElementById("message").value;
+        var client_id = "wexoeai"; // Replace with your user ID
+        msg_data =  "booking_service: " + booking_service + "\nphone: "+phone
+        console.log(msg_data);
+        var payload = {
+          client_id: client_id,
+          name: name,
+          email: email,
+          message: msg_data,
+        };
+        console.log("loggg", payload);
+
+        // Send JSON request using Fetch API
+        // Replace with your user chat bot id
+        fetch("https://chatbot.wexorai.com/clientmessagef3", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+          redirect: "follow",
+        })
+          .then(function (response) {
+            if (response.ok) {
+              alert("Message sent successfully!");
+              // Reset form fields
+              document.getElementById("name").value = "";
+              document.getElementById("email").value = "";
+              document.getElementById("booking_service").value = "";
+              document.getElementById("phone").value = "";
+              document.getElementById("message").value = "";
+            } else {
+              throw new Error("Failed to send message.");
+            }
+          })
+          .catch(function (error) {
+            alert("An error occurred: " + error.message);
+          });
+      });
+  </script>
 
 </body>
 
