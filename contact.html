@@ -72,7 +72,7 @@
     <!-- preloader -->
     <div id="preloader">
       <div id="spinner">
-        <img alt="" src="images/preloaders/2.gif">
+        <img alt="image_not_found" src="images/preloaders/2.gif">
       </div>
     </div>
 
@@ -120,7 +120,7 @@
                 <li>
                   <a href="about.html">About</a>
                 </li>
-                
+
                 <li>
                   <a href="contact.html" class="btn btn-gray btn-transparent btn-theme-colored">Contact <i
                       class="fa fa-arrow-circle-right"></i></a>
@@ -171,13 +171,20 @@
                 <div class="contact-info text-center">
                   <i class="fa fa-phone font-36 mb-10 text-theme-colored"></i>
                   <h4>Call Us</h4>
-                  <h6 class="text-gray">Phone: +91 8891095660</h6>
+                  <h6>Bangalore :</h6>
+                  <h6 class="text-gray"> +91 9633213660</h6>
+                  <h6>Kannur :</h6>
+                  <h6 class="text-gray"> +91 8891095660</h6>
                 </div>
               </div>
               <div class="col-sm-12 col-md-4">
                 <div class="contact-info text-center">
                   <i class="fa fa-map-marker font-36 mb-10 text-theme-colored"></i>
                   <h4>Address</h4>
+                  <h6>Bangalore</h6>
+                  <h6 class="text-gray">Prestige Atlanta, 80 Feet Rd, Koramangala 1A Block, Koramangala,,Bengaluru,
+                    Karnataka 560034.</h6>
+                  <h6>Kannur</h6>
                   <h6 class="text-gray">Near Nandilath G Mart, Thavakkara Road, Caltex, Kannur</h6>
                 </div>
               </div>
@@ -185,7 +192,7 @@
                 <div class="contact-info text-center">
                   <i class="fa fa-envelope font-36 mb-10 text-theme-colored"></i>
                   <h4>Email</h4>
-                  <h6 class="text-gray">educationprospire@gmail.com
+                  <h6 class="text-gray">info@prospireeducation.in
                   </h6>
                 </div>
               </div>
@@ -205,7 +212,8 @@
                   <div class="col-sm-6">
                     <div class="form-group">
                       <label>Name <small>*</small></label>
-                      <input id="name" name="form_name" class="form-control" type="text" placeholder="Enter Name" required="">
+                      <input id="name" name="form_name" class="form-control" type="text" placeholder="Enter Name"
+                        required="">
                     </div>
                   </div>
                   <div class="col-sm-6">
@@ -247,41 +255,41 @@
                     placeholder="Enter Message"></textarea>
                 </div>
                 <div class="form-group">
-                  <input  name="form_botcheck" class="form-control" type="hidden" value="" />
+                  <input name="form_botcheck" class="form-control" type="hidden" value="" />
                   <button type="submit" class="btn btn-dark btn-theme-colored btn-flat"
                     data-loading-text="Please wait...">Send your message</button>
                 </div>
               </form>
               <script>
                 $(document).ready(function () {
-                    $("#contact_form").validate({
-                        submitHandler: function (form) {
-                            var form_btn = $(form).find('button[type="submit"]');
-                            var form_result_div = '#form-result';
-                            $(form_result_div).remove();
-                            form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
-            
-                            // Perform your additional actions or validations here before AJAX submission
-            
-                            $(form).ajaxSubmit({
-                                dataType: 'json',
-                                success: function (data) {
-                                    if (data.status == 'true') {
-                                        $(form).find('.form-control').val('');
-                                    }
-                                    form_btn.prop('disabled', false).html(form_btn_old_msg);
-                                    $(form_result_div).html(data.message).fadeIn('slow');
-                                    setTimeout(function () { $(form_result_div).fadeOut('slow') }, 6000);
-                                }
-                            });
+                  $("#contact_form").validate({
+                    submitHandler: function (form) {
+                      var form_btn = $(form).find('button[type="submit"]');
+                      var form_result_div = '#form-result';
+                      $(form_result_div).remove();
+                      form_btn.before('<div id="form-result" class="alert alert-success" role="alert" style="display: none;"></div>');
+
+                      // Perform your additional actions or validations here before AJAX submission
+
+                      $(form).ajaxSubmit({
+                        dataType: 'json',
+                        success: function (data) {
+                          if (data.status == 'true') {
+                            $(form).find('.form-control').val('');
+                          }
+                          form_btn.prop('disabled', false).html(form_btn_old_msg);
+                          $(form_result_div).html(data.message).fadeIn('slow');
+                          setTimeout(function () { $(form_result_div).fadeOut('slow') }, 6000);
                         }
-                    });
+                      });
+                    }
+                  });
                 });
-            </script>
+              </script>
 
             </div>
             <div class="col-md-5">
-              <img src="images/about/6.png" alt="">
+              <img src="images/about/6.png" alt="image_not_found">
             </div>
             <!-- <div class="col-md-5">
 
@@ -306,18 +314,21 @@
     <footer id="footer" class="footer bg-black-222">
       <div class="container pt-70 pb-30">
         <div class="row border-bottom-black">
-          <div class="col-sm-6 col-md-4">
+          <div class="col-sm-4 col-md-3">
             <div class="widget dark">
               <h5 class="widget-title mb-10">Contact Us</h5>
-              <!-- <img class="mt-10 mb-20" alt="" src="images/mainimages/Logo_transparent.png"> -->
+              <!-- <img class="mt-10 mb-20" alt="image_not_found" src="images/mainimages/Logo_transparent.png"> -->
               <ul class="list-inline mt-5">
+                <h6 class="widget-title mb-10">Prospire Bangalore Chapter
+                </h6>
                 <li class="m-0 pl-10 pr-10"> <i class="fa fa-map-marker  text-theme-colored mr-5"></i> <a
-                    class="text-gray" href="#">Near Nandilath G Mart, Thavakkara Road, Caltex, Kannur</a> </li>
+                    class="text-gray" href="#">Prestige Atlanta, 80 Feet Rd, Koramangala 1A Block,
+                    Koramangala,,Bengaluru, Karnataka 560034</a> </li>
                 <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-theme-colored mr-5"></i> <a class="text-gray"
-                    href="#">+91 8891095660</a> </li>
+                    href="#">+91 9633213660</a> </li>
 
                 <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-theme-colored mr-5"></i> <a
-                    class="text-gray" href="#"> educationprospire@gmail.com</a> </li>
+                    class="text-gray" href="info@prospireeducation.in">info@prospireeducation.in</a> </li>
                 <li class="m-0 pl-10 pr-10"> <i class="fa fa-globe text-theme-colored mr-5"></i> <a class="text-gray"
                     href="https://prospireeducation.in/">https://prospireeducation.in/</a> </li>
               </ul>
@@ -335,20 +346,52 @@
             </div>
 
           </div>
+          <div class="col-sm-4 col-md-3">
+            <div class="widget dark">
+              <h5 class="widget-title mb-10">Contact Us</h5>
+              <!-- <img class="mt-10 mb-20" alt="image_not_found" src="images/mainimages/Logo_transparent.png"> -->
+              <ul class="list-inline mt-5">
+                <h6 class="widget-title mb-10">Prospire Kannur Chapter</h6>
 
-          <div class="col-sm-6 col-md-4">
+                <li class="m-0 pl-10 pr-10"> <i class="fa fa-map-marker  text-theme-colored mr-5"></i> <a
+                    class="text-gray" href="#">Central Mall, 2nd Floor, Thavakkara,Kannur,670001</a> </li>
+                <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-theme-colored mr-5"></i> <a class="text-gray"
+                    href="#">+91 8891095660</a> </li>
+
+                <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-theme-colored mr-5"></i> <a
+                    class="text-gray" href="info@prospireeducation.in"> info@prospireeducation.in</a> </li>
+                <li class="m-0 pl-10 pr-10"> <i class="fa fa-globe text-theme-colored mr-5"></i> <a class="text-gray"
+                    href="https://prospireeducation.in/">https://prospireeducation.in/</a> </li>
+              </ul>
+            </div>
+            <br><br>
+            <div class="widget dark">
+              <h6 class="widget-title mb-0 text-gray-darkgray">Connect With Us</h6>
+              <ul class="styled-icons icon-dark icon-circled icon-sm mt-10">
+                <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-skype"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div class="col-sm-4 col-md-3">
             <div class="widget dark">
               <h5 class="widget-title line-bottom">Useful Links</h5>
               <ul class="list-border">
                 <li><a href="/">Home</a></li>
                 <li><a href="about.html">About us</a></li>
                 <li><a href="course.html">Courses</a></li>
-                
+
                 <li><a href="contact.html">Contact</a></li>
               </ul>
             </div>
           </div>
-          <div class="col-sm-6 col-md-4">
+          <div class="col-sm-4 col-md-3">
             <div class="widget dark mb-20">
               <h5 class="widget-title line-bottom">Our Course</h5>
               <ul class="list-border font-13">
@@ -385,7 +428,7 @@
   <!-- Footer Scripts -->
   <!-- JS | Custom script for all pages -->
   <script src="js/custom.js"></script>
- <script>
+  <script>
     document
       .getElementById("contact_form")
       .addEventListener("submit", function (event) {
@@ -398,7 +441,7 @@
         var phone = document.getElementById("phone").value;
         var message = document.getElementById("message").value;
         var client_id = "wexoeai"; // Replace with your user ID
-        msg_data =  "booking_service: " + booking_service + "\nphone: "+phone
+        msg_data = "booking_service: " + booking_service + "\nphone: " + phone
         console.log(msg_data);
         var payload = {
           client_id: client_id,
