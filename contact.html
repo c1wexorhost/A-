@@ -240,14 +240,14 @@
 
                     <div class="form-group mb-30">
                       <div class="styled-select">
-                        <select id="booking_service" name="booking_service" class="form-control" required="">
-                          <option value="">- Select Your Courses -</option>
-                          <option value="Accounting Technoloiges">CMA USA</option>
-                          <option value="Chemical Engineering">CMA INDIA</option>
-                          <option value="Computer Technologies">Enrollment Agent</option>
-                          <option value="Development Studies">BAT</option>
-                          <option value="Development Studies">BAT</option>
-                          <option value="Electrical & Electronic">ACCA IFRS</option>
+                        <select id="course" name="course" class="form-control" required="">
+                          <option value="none">- Select Your Courses -</option>
+                          <option value="CMA USA">CMA USA</option>
+                          <option value="CMA INDIA">CMA INDIA</option>
+                          <option value="Enrollment Agent">Enrollment Agent</option>
+                          <option value="BAT">BAT</option>
+                          <option value="BAT">BAT</option>
+                          <option value="ACCA IFRS">ACCA IFRS</option>
                         </select>
                       </div>
                     </div>
@@ -448,11 +448,11 @@
         // Get form values
         var name = document.getElementById("name").value;
         var email = document.getElementById("email").value;
-        var booking_service = document.getElementById("booking_service").value;
+        var course = document.getElementById("course").value;
         var phone = document.getElementById("phone").value;
         var message = document.getElementById("message").value;
         var client_id = "wc_wFweJldKH9riCsIn3wcg"; // Replace with your user ID
-        msg_data = "booking_service: " + booking_service + "\nphone: " + phone
+        msg_data = "course: " + course + "\nphone: " + phone
         console.log(msg_data);
         var payload = {
           client_id: client_id,
@@ -478,7 +478,7 @@
               // Reset form fields
               document.getElementById("name").value = "";
               document.getElementById("email").value = "";
-              document.getElementById("booking_service").value = "";
+              document.getElementById("course").value = "";
               document.getElementById("phone").value = "";
               document.getElementById("message").value = "";
             } else {
