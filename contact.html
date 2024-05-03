@@ -9,7 +9,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0" />
   <meta http-equiv="content-type" content="application/xml; charset=UTF-8" />
   <meta name="description" content="prospire | Education & Institution" />
-  <meta name="keywords" content="Prospire Education, CMA institute in Kannur , Best EA campus in Kannur , North Kerala , cma college in kannur , cma course details , cma usa course details , cma course duration , accounting course , business education , free training , education classes , career courses , education courses
+  <meta name="keywords"
+    content="Prospire Education, CMA institute in Kannur , Best EA campus in Kannur , North Kerala , cma college in kannur , cma course details , cma usa course details , cma course duration , accounting course , business education , free training , education classes , career courses , education courses
   business courses, CMA India course, CMA college in Kannur, ACCA course in Kannur, college, fee, education, education, cma, acca, learning, EA course, kerala, Kannur, near me , CMA ACCA EA courses , Institute " />
 
   <meta name="google-site-verification" content="mDur_Lv60e9VIH8-TnpzP6mj1Sg0d_DWaYEJWOHh6iQ" />
@@ -347,7 +348,8 @@
               <h6 class="widget-title mb-0 text-gray-darkgray">Connect With Us</h6>
               <ul class="styled-icons icon-dark icon-circled icon-sm mt-10">
                 <li><a href="https://www.youtube.com/@Prospireeducation"><i class="fa fa-youtube"></i></a></li>
-                <li><a href="https://www.instagram.com/prospire.education?igsh=dTZncWt3NHhveGY4"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.instagram.com/prospire.education?igsh=dTZncWt3NHhveGY4"><i
+                      class="fa fa-instagram"></i></a></li>
                 <!-- <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -379,7 +381,8 @@
               <h6 class="widget-title mb-0 text-gray-darkgray">Connect With Us</h6>
               <ul class="styled-icons icon-dark icon-circled icon-sm mt-10">
                 <li><a href="https://www.youtube.com/@Prospireeducation"><i class="fa fa-youtube"></i></a></li>
-                <li><a href="https://www.instagram.com/prospire.education?igsh=dTZncWt3NHhveGY4"><i class="fa fa-instagram"></i></a></li>
+                <li><a href="https://www.instagram.com/prospire.education?igsh=dTZncWt3NHhveGY4"><i
+                      class="fa fa-instagram"></i></a></li>
                 <!-- <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                 <li><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -440,9 +443,7 @@
   <!-- JS | Custom script for all pages -->
   <script src="js/custom.js"></script>
   <script>
-    document
-      .getElementById("contact_form")
-      .addEventListener("submit", function (event) {
+    document.getElementById("contact_form").addEventListener("submit", function (event) {
         event.preventDefault(); // Prevent form submission
 
         // Get form values
@@ -450,47 +451,43 @@
         var email = document.getElementById("email").value;
         var course = document.getElementById("course").value;
         var phone = document.getElementById("phone").value;
-        var message = document.getElementById("message").value;
+        var message = "Course : " + course + "\nPhone : " + phone + "\nMessage : " + document.getElementById("message").value;
         var client_id = "wc_wFweJldKH9riCsIn3wcg"; // Replace with your user ID
-        msg_data = "course: " + course + "\nphone: " + phone
-        console.log(msg_data);
+        console.log(message);
         var payload = {
-          client_id: client_id,
-          name: name,
-          email: email,
-          message: msg_data,
+            client_id: client_id,
+            name: name,
+            email: email,
+            message: message // Include the combined message in the payload
         };
-        console.log("loggg", payload);
 
         // Send JSON request using Fetch API
-        // Replace with your user chat bot id
         fetch("https://chatbot.wexorai.com/clientmessagef3", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
-          redirect: "follow",
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(payload),
+            redirect: "follow",
         })
-          .then(function (response) {
-            if (response.ok) {
-              alert("Message sent successfully!");
-              // Reset form fields
-              document.getElementById("name").value = "";
-              document.getElementById("email").value = "";
-              document.getElementById("course").value = "";
-              document.getElementById("phone").value = "";
-              document.getElementById("message").value = "";
-            } else {
-              throw new Error("Failed to send message.");
-            }
-          })
-          .catch(function (error) {
-            alert("An error occurred: " + error.message);
-          });
-      });
-  </script>
-
+            .then(function (response) {
+                if (response.ok) {
+                    alert("Message sent successfully!");
+                    // Reset form fields
+                    document.getElementById("name").value = "";
+                    document.getElementById("email").value = "";
+                    document.getElementById("course").value = "none";
+                    document.getElementById("phone").value = "";
+                    document.getElementById("message").value = "";
+                } else {
+                    throw new Error("Failed to send message.");
+                }
+            })
+            .catch(function (error) {
+                alert("An error occurred: " + error.message);
+            });
+    });
+</script>
 </body>
 
 <!-- page-contact6-with-multiple-marker18:20-->
